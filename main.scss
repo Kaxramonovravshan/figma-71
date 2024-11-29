@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$sharpMeduim: SharpMedium;
+$sharpBold: SharpBold;
+$sharpLight: sharpLight;
+
+@mixin container {
+  max-width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@font-face {
+  font-family: $sharpBold;
+  src: url(./fonts/SharpSansBold.otf);
+}
+@font-face {
+  font-family: $sharpMeduim;
+  src: url(./fonts/Sharp\ Sans\ Medium.otf);
+}
+@font-face {
+  font-family: $sharpLight;
+  src: url(./fonts/Sharp\ Sans\ Light.otf);
+}
+
+.navbar {
+  width: 100%;
+  height: 120px;
+
+  .nav-con {
+    @include container();
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 160px;
+      h1 {
+        font-family: $sharpBold;
+        font-size: 26px;
+        font-weight: 500;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+        font-family: $sharpMeduim;
+        font-size: 20px;
+        font-weight: 400;
+      }
+    }
+
+    .icon-box {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      button {
+        width: 160px;
+        height: 54px;
+        border-radius: 27px;
+        border: none;
+        background-color: rgba(73, 73, 73, 1);
+        color: #fff;
+        font-family: $sharpMeduim;
+        font-size: 20px;
+        font-weight: 400;
+      }
+      .menu-btn {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .nav-con {
+      padding: 0 10px;
+      .logo-box {
+        ul {
+          display: none;
+        }
+      }
+
+      .icon-box {
+        gap: 10px;
+        button {
+          width: 120px;
+          height: 40px;
+          font-size: 15px;
+        }
+        i {
+          display: none;
+        }
+        .menu-btn {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.sec-1 {
+  width: 100%;
+  .sec1-con {
+    @include container();
+
+    .text-box {
+      width: 50%;
+
+      h1 {
+        font-family: $sharpBold;
+        font-size: 76px;
+        font-weight: 770;
+        span {
+          color: #5fb848ff;
+        }
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-family: $sharpLight;
+        font-size: 24px;
+        font-weight: 750;
+        margin-bottom: 50px;
+      }
+
+      button {
+        width: 200px;
+        height: 64px;
+        border-radius: 50px;
+        background: linear-gradient(
+          rgba(100, 187, 71, 1),
+          rgba(44, 149, 83, 1)
+        );
+        border: none;
+        color: #fff;
+        font-family: $sharpLight;
+        font-size: 24px;
+        font-weight: 400;
+      }
+    }
+
+    .img-box {
+      width: 50%;
+      background: url(./img/bg\ elements.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .sec1-con {
+        padding: 0 10px;
+        gap: 50px;
+      flex-direction: column-reverse;
+
+      .img-box{
+        width: 100%;
+      }
+
+      .text-box{
+        width: 100%;
+        h1{
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+        p{
+            font-size: 18px;
+            margin-bottom: 25px;
+            
+        }
+        button{
+            font-size: 15px;
+            width: 140px;
+            height: 40px;
+        }
+      }
+    }
+  }
+}
